@@ -1,0 +1,30 @@
+// COLOR VARIABLES
+
+$primary-color:hsl(228, 45%, 44%);
+$custom-white:hsl(0, 0%, 98%);
+$custom-gray:hsl(0, 0%, 41%);
+$custom-black:hsl(0, 0%, 8%);
+$shadow-color:#3e52a33d;
+
+// FONT VARIABLES
+
+$default-f-size:18px;
+$default-line-height:$default-f-size + 10;
+$default-font-family:'Epilogue', sans-serif;
+
+// TRANSITION VARIABLES
+$default-transition:all 0.5s ease-in-out;
+
+// BORDER VARIABLES
+$default-border:1px solid $primary-color;
+$border-radius:12px;
+// LAYOUR VARIABLES
+$xl:1200px;
+$lg:992px;
+$md:768px;
+$sm:576px;
+// (extra small devices - screen width less than 576px)
+//sm- (small devices - screen width equal to or greater than 576px)
+//md- (medium devices - screen width equal to or greater than 768px)
+//lg- (large devices - screen width equal to or greater than 992px)
+//xl- (xlarge devices - screen width equal to or greater than 1200px)

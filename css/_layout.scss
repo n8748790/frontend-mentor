@@ -1,0 +1,46 @@
+$breakpoints:(
+    "xs":0px,
+    "sm":576px,
+    "md":768px,
+    "lg":992px,
+    "xl":1200px,
+);
+
+@mixin xs{
+    @media (min-width:map-get($breakpoints,"xs")) {
+        @content;       
+    }
+}
+@mixin xs-sm{
+    @media (min-width:map-get($breakpoints,"xs")) and (max-width:map-get($breakpoints,"sm"))  {
+        @content;       
+    }
+}
+@mixin sm-md{
+    @media (min-width:map-get($breakpoints,"sm")) and (max-width:map-get($breakpoints,"md"))  {
+        @content;       
+    }
+}
+@mixin md-lg{
+    @media (min-width:map-get($breakpoints,"md")) and (max-width:map-get($breakpoints,"lg"))  {
+        @content;       
+    }
+}
+@mixin lg-xl{
+    @media (min-width:map-get($breakpoints,"lg")) and (max-width:map-get($breakpoints,"xl"))  {
+        @content;       
+    }
+}
+@mixin lg{
+    @media (max-width:map-get($breakpoints,"lg")){
+        @content;       
+    }
+}
+
+@each $key,$val in $breakpoints{
+    @media(max-width:$val){
+        .column-#{$key}-reverse{
+            flex-direction: column-reverse;
+        }
+    }
+} 

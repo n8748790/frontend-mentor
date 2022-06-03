@@ -1,0 +1,227 @@
+// IMPORTING FONT FAMILIES
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+// IMPORTING VARIABLES
+@import "./variables";
+
+// IMPORTING LAYOUT
+@import "./layout";
+
+// IMPORTING MIXINS
+@import "./mixins";
+
+// IMPORTING GRID
+@import "./grid";
+
+// IMPORTING GENERAL STYLESHEET
+@import "./general";
+
+// IMPORTING COMPONENTS
+@import "./components";
+
+
+// CUSTOM CSS OF THE TEMPLATE
+// HEADER CSS START
+header.custom-header-nx {
+    position: relative;
+
+    nav {
+        @include flexbox(space-between);
+
+        .nav__content__left {
+            @include flexbox();
+
+            .logo {
+                margin-top: 8px;
+            }
+
+            line-height: 10px;
+
+            >ul {
+                @include flexbox();
+
+                >li {
+                    padding: 0 15px;
+
+                    a {
+                        color: $custom-gray;
+                        line-height: 75px;
+                    }
+
+                    &.has-menu {
+                        position: relative;
+
+                        &::before {
+                            content: url("../images/icon-arrow-down.svg");
+                            position: absolute;
+                            right: 0;
+                            top: calc(50% - 2px);
+                            transform: translateY(-50%);
+                            color: $custom-gray;
+                        }
+
+                        .sub-menu {
+                            flex-direction: column;
+                            position: absolute;
+                            top: calc(100% + 0);
+                            left: 0;
+                            background-color: $custom-white;
+                            padding: 15px;
+                            border-radius: $border-radius;
+                            box-shadow: 0 25px 45px 0 $shadow-color;
+                            display: none;
+                            transition: $default-transition;
+
+                            li {
+                                a {
+                                    white-space: nowrap;
+                                    text-transform: capitalize;
+                                    display: inline-block;
+                                    width: 100%;
+                                    line-height: 35px;
+                                }
+
+                                line-height: 24px;
+                            }
+                        }
+
+                        &:hover {
+                            .sub-menu {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+
+                @include sm-md {
+                    display: none;
+                }
+            }
+        }
+
+        .nav__content__right {
+            >* {
+                margin: 0 15px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+
+            @include sm-md {
+                display: none;
+            }
+        }
+
+        .nav__content__btn {
+            display: none;
+
+            @include lg {
+                display: inline-block;
+
+                .line {
+                    display: block;
+                    width: 35px;
+                    background-color: #3e52a3;
+                    height: 3px;
+                    margin: 8px 0;
+                }
+            }
+        }
+    }
+}
+
+// HEADER CSS END
+// BANNER CSS START
+.banner .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+
+    @include xs-sm {
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 85px;
+        line-height: 95px;
+
+        @include md-lg {
+            font-size: 64px;
+            line-height: 74px;
+        }
+
+        @include sm-md {
+            font-size: 44px;
+            line-height: 54px;
+        }
+
+        @include xs-sm {
+            font-size: 34px;
+            line-height: 44px;
+            width: 100%;
+            text-align: center;
+        }
+
+        @include xs-sm {
+            font-size: 24px;
+            line-height: 34px;
+        }
+    }
+
+    .button-main {
+        @include xs-sm {
+            margin: 0 auto;
+        }
+    }
+}
+
+// BANNER CSS END
+
+// IMAGE BLOCK CSS START
+.image-block {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    gap: calc(100%/4 - 30px);
+
+    @include xs-sm {
+        width: 100%;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    img {
+        object-fit: contain;
+        width: 100%;
+
+        @include xs-sm {
+            height: 20px;
+        }
+    }
+}
+
+// IMAGE BLOCK CSS END
+.contain-img {
+    width: 100%;
+    object-fit: contain;
+    height: 650px;
+
+    @include xs-sm {
+        height: 415px;
+    }
+}
+
+// CUSTOM RESPONSIVE STYLESHEETS
+@media(max-width:$md) {
+    .display-desk {
+        display: none;
+    }
+}
+
+@media(min-width:$md) {
+    .display-mobile {
+        display: none;
+    }
+}

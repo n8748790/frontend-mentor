@@ -1,0 +1,21 @@
+// DEFAULT FONTS SETTING
+@mixin default-font{
+    font-size: $default-f-size;
+    line-height: $default-line-height;
+    font-family: $default-font-family;
+}
+
+// FLEX BOX MIXINS
+@mixin flexbox($j-content:center,$a-content:center) {
+    display: flex;
+    justify-content: $j-content;
+    align-items: $a-content;
+}
+//DEFAULT BUTTON SETTING
+@mixin def-button {
+    position: relative;
+    font-size: $default-f-size;
+    font-weight: 500;
+    padding: 8px 12px;
+    cursor: pointer;
+}
